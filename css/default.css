@@ -1,4 +1,50 @@
 body {
+  background-color: #181818;
+  color: #ffd95b;
+  margin: 0px;
+}
+
+#nav {
   background-color: black;
-  color: aliceblue;
+  border-bottom: 1px solid #ffd95b;
+  box-shadow: 0px 1px 10px #ffd95b;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#nav .in-nav {
+  margin: 0px;
+  padding: 15px 15%;
+}
+
+#nav .in-nav .elem {
+  margin: 0 10px;
+}
+
+#nav .right {
+  margin: 0 0 0 auto;
+}
+
+#nav ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0;
+  display: flex;
+}
+
+#nav .center {
+  text-align: center;
+}
+
+#contents {
+  margin: 30px 20%;
+  padding: 20px;
+  background-color: #242526;
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
