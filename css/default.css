@@ -1,50 +1,58 @@
-body {
-  background-color: #181818;
-  color: #ffd95b;
-  margin: 0px;
+#body {
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
-#nav {
+div .branding {
+  color: #7C63FF;
+}
+.branding {
+  font-family: 'Source Code Pro', monospace !important;
+}
+
+footer {
   background-color: black;
-  border-bottom: 1px solid #ffd95b;
-  box-shadow: 0px 1px 10px #ffd95b;
-  display: flex;
-  align-items: center;
-  width: 100%;
+  color: #7C63FF;
 }
 
-#nav .in-nav {
-  margin: 0px;
-  padding: 15px 15%;
+footer i {
+  color: #7C63FF;
+}
+button i {
+  color: #7C63FF;
 }
 
-#nav .in-nav .elem {
-  margin: 0 10px;
+h1 {
+  font-family: 'Russo One', sans-serif;
 }
 
-#nav .right {
-  margin: 0 0 0 auto;
+h3 {
+  font-family: 'Russo One', sans-serif;
 }
 
-#nav ul {
-  list-style: none;
-  margin: 0px;
-  padding: 0;
-  display: flex;
+.btn {
+  font-family: 'Russo One', sans-serif;
 }
 
-#nav .center {
-  text-align: center;
+.btn-purple {
+  background-color: #7C63FF !important;
+  color: black !important;
+  border-color: black !important;
+}
+.btn-purple:hover {
+  background-color: #725ae9 !important;
+}
+.btn-purple i {
+  color: black !important;
 }
 
-#contents {
-  margin: 30px 20%;
-  padding: 20px;
-  background-color: #242526;
-  border-radius: 10px;
+a .active {
+  color: #7C63FF;
 }
 
-a {
-  text-decoration: none;
-  color: white;
+.card-header {
+  background-color: #f1eeff !important;
+}
+
+.form-control {
+  border-color: #7C63FF !important;
 }
