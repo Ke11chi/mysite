@@ -45,6 +45,10 @@ h3 {
   color: black !important;
 }
 
+.text-purple {
+  color: #7C63FF;
+}
+
 a .active {
   color: #7C63FF;
 }
