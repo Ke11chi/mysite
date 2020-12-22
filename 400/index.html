@@ -22,7 +22,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Russo+One&family=Source+Code+Pro:ital,wght@1,900&display=swap"
         rel="stylesheet">
-    <title>Page not found | konekato</title>
+    <title>Bad request | konekato</title>
 </head>
 
 <body id="body">
@@ -30,16 +30,22 @@
     <nav class="navbar navbar-expand-lg navbar-light p-5">
         <div class="container">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-item nav-link active" href="/home/">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/home/" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Home</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/home/#profile">Profile</a>
+                        <a class="dropdown-item" href="/home/#skills">Skills</a>
+                        <a class="dropdown-item" href="/home/#contact">Contact</a>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-item nav-link" href="https://github.com/konekato" target="_blank"
-                        rel="noopener noreferrer">Repos</a>
+                    <a class="nav-link" href="/repos/">Repos <span class="sr-only">(current)</a>
                 </li>
             </ul>
             <div class="navbar-nav">
-                <!-- TODO create repos page-->
                 <a class="navbar-brand branding" href="/">
                     kONE
                 </a>
@@ -49,7 +55,8 @@
 
     <div class="text-center">
         <img src="/img/undraw_void_3ggu.svg" height="300">
-        <h1 class="w-100 mb-3"><span class="display-3 text-purple">400</span> <span class="display-4">bad request</span></h1>
+        <h1 class="w-100 mb-3"><span class="display-3 text-purple">400</span> <span class="display-4">bad request</span>
+        </h1>
         <p>
             リクエストが拒否されました。
         </p>
