@@ -1,45 +1,184 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <link
-      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/default.css" />
-    <title>HOME</title>
-  </head>
-  <body>
-    <header>
-      <nav id="nav">
-        <a href="#" class="in-nav center"
-          ><img
-            src="../img/icon-head.png"
-            alt="icon-head"
-            width="159"
-            height="40"
-        /></a>
-        <div class="in-nav right">
-          <ul>
-            <li class="elem"><a href="#">sssssss</a></li>
-            <li class="elem"><a href="#">kkkkkkk</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <div id="contents">
-      <h1>HOME</h1>
-      <p>Welcome!</p>
-      <br />
-      <h2>who is konekato?</h2>
-      <h3>Who is me?</h3>
-      <p>Keiichi Kato.</p>
-      <h3>What's job?</h3>
-      <p>Student.</p>
-      <h3>What's learning?</h3>
-      <p>Information Technology.</p>
-      <h3>Where learning that?</h3>
-      <p>At Tokyo Denki University.</p>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/default.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Russo+One&family=Source+Code+Pro:ital,wght@1,900&display=swap"
+    rel="stylesheet">
+  <title>Home | konekato</title>
+</head>
+
+<body id="body">
+  <!-- header -->
+  <nav class="navbar navbar-expand-lg navbar-light p-5">
+    <div class="container">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="/home/" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Home</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/home/#profile">Profile</a>
+            <a class="dropdown-item" href="/home/#skills">Skills</a>
+            <a class="dropdown-item" href="/home/#contact">Contact</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/repos/">Repos <span class="sr-only">(current)</a>
+        </li>
+      </ul>
+      <div class="navbar-nav">
+        <!-- TODO create repos page-->
+        <a class="navbar-brand branding" href="/">
+          kONE
+        </a>
+      </div>
     </div>
-  </body>
+  </nav>
+
+  <!-- body -->
+  
+  <!-- contact -->
+  <div id="contact" class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-6 d-flex align-content-center flex-wrap">
+        <h1 class="display-4 w-100 mb-3">Contact</h1>
+        <div class="w-100 mb-1">お問い合わせは以下のフォームにご記入ください。</div>
+        <div class="w-100 text-purple"><i class="far fa-lightbulb fa-fw fa-lg"></i>送信の際、少々時間がかかるかもしれません！</div>
+      </div>
+      <div class="col-md-6">
+        <img src="/img/undraw_contact_us_15o2.svg" class="img-fluid">
+      </div>
+    </div>
+    <form id="contact-form" action="https://kone-server.herokuapp.com/githubio/contact" method="POST">
+      <div class="form-group row mt-4">
+        <label class="col-md-2 col-form-label">お名前 <i class="fas fa-asterisk fa-fw text-danger"></i></label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" name="name" placeholder="山田　太郎" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label">メールアドレス <i class="fas fa-asterisk fa-fw text-danger"></i></label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" name="mail" placeholder="xxxxx@example.com" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label">電話番号</label>
+        <div class="col-md-10">
+          <input type="tel" class="form-control" name="phone" placeholder="000-1111-2222">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label">お問い合わせ種別 <i class="fas fa-asterisk fa-fw text-danger"></i></label>
+        <div class="col-md-10">
+          <select class="form-control" name="kind" required>
+            <option value="" selected>お問い合わせ種別を選択ください。</option>
+            <option value="opinion">ご意見/ご質問</option>
+            <option value="scout">スカウト/ご依頼</option>
+            <option value="impression">本ページのご感想</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label">お問い合わせ内容 <i class="fas fa-asterisk fa-fw text-danger"></i></label>
+        <div class="col-md-10">
+          <textarea class="form-control" name="content" placeholder="お問い合わせ内容をご記入ください。" rows="5" required></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-12">
+          <button id="btn-contact-form-submit" type="submit" class="btn btn-purple"><i
+              class="fas fa-paper-plane fa-fw"></i> SEND</button>
+          <span class="ml-3 text-danger error-message"></span>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="container-fluid text-center text-light pt-5 pb-5" style="background-color: #7C63FF;">
+    <h1 class="display-3">Thank you!</h1>
+    <div>最後までご覧くださりありがとうございました。</div>
+  </div>
+
+  <!-- footer -->
+  <footer class="container-fluid pt-3 pb-3">
+    <div class="row">
+      <div class="col-md-11 offset-md-1 mb-2 branding h3">
+        kONE
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 offset-md-1">&copy; 2020 konekato</div>
+      <div class="col-md-2">
+        <a href="https://github.com/konekato" target="_blank" rel="noopener noreferrer" class="ml-1">
+          <i class="fab fa-github fa-lg fa-fw"></i>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="ml-1">
+          <i class="fab fa-linkedin-in fa-lg fa-fw"></i>
+        </a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="ml-1">
+          <i class="fab fa-twitter fa-lg fa-fw"></i>
+        </a>
+        <a href="https://www.facebook.com/keiichi.kato.3154" target="_blank" rel="noopener noreferrer" class="ml-1">
+          <i class="fab fa-facebook-f fa-lg fa-fw"></i>
+        </a>
+        <a href="https://www.instagram.com/techato_/" target="_blank" rel="noopener noreferrer" class="ml-1">
+          <i class="fab fa-instagram fa-lg fa-fw"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      function setLoadingButtonAnimation() {
+        $('#btn-contact-form-submit').empty();
+        $('#btn-contact-form-submit').append('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true">');
+      }
+      function unsetLoadingButtonAnimation() {
+        $('#btn-contact-form-submit').empty();
+        $('#btn-contact-form-submit').append('<i class="fas fa-paper-plane fa-fw"></i> SEND</button>');
+      }
+
+      $('#contact-form').submit(function () {
+        setLoadingButtonAnimation();
+        var errMsg = '';
+        if (!$('input[name="name"]').val().trim()) {
+          errMsg = 'お名前';
+        } else if (!$('input[name="mail"]').val().trim()) {
+          errMsg = 'メールアドレス';
+        } else if (!$('textarea[name="content"]').val().trim()) {
+          errMsg = 'お問い合わせ内容';
+        }
+        if (errMsg != '') {
+          $('.error-message').html(errMsg + 'を入力して下さい。');
+          unsetLoadingButtonAnimation();
+          return false;
+        }
+
+        $('.error-message').html('');
+        return true;
+      });
+    });
+  </script>
+</body>
+
 </html>
