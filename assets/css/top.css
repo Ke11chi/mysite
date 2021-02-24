@@ -1,7 +1,7 @@
 body {
   font-family: "Squada One",sans-serif;
-  background: #504323;
-  color: #FFFFC7;
+  background: #1e183f;
+  color: #d4c7ff;
 }
 
 .rotation {
@@ -21,16 +21,16 @@ body {
   vertical-align: middle;
   border-radius: 50%;
   transition: background 1s, border-width 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), text-shadow 0.5s;
-  color: #FFFFC7;
-  text-shadow: 0 0 20px #FFFF7C, 0 0 20px rgba(226, 230, 10, 0);
-  box-shadow: 0 0 0 rgba(226, 230, 10, 0), inset 0 0 0 rgba(226, 230, 10, 0);
-  background-image: radial-gradient(center, ellipse cover, rgba(226, 230, 10, 0) 0%, rgba(226, 230, 10, 0) 90%);
-  border: 0 dotted rgba(226, 230, 10, 0);
+  color: #d4c7ff;
+  text-shadow: 0 0 20px #9f7cff, 0 0 20px rgba(96, 57, 224, 0);
+  box-shadow: 0 0 0 rgba(61, 10, 230, 0), inset 0 0 0 rgba(61, 10, 230, 0);
+  background-image: radial-gradient(center, ellipse cover, rgba(61, 10, 230, 0) 0%, rgba(61, 10, 230, 0) 90%);
+  border: 0 dotted rgba(61, 10, 230, 0);
 }
 .rotation a:hover {
   color: #fff;
-  text-shadow: 0 0 50px #FFFF7C, 0 0 50px #FFFF7C;
-  background-image: radial-gradient(center, ellipse cover, rgba(226, 230, 10, 0.3) 0%, rgba(10, 175, 230, 0) 60%);
+  text-shadow: 0 0 50px #9f7cff, 0 0 50px #9f7cff;
+  background-image: radial-gradient(center, ellipse cover, rgba(61, 10, 230, 0.3) 0%, rgba(61, 10, 230, 0) 60%);
 }
 .rotation:before, .rotation:after, .rotation a:before, .rotation a:after {
   transition: 0.2s ease-in-out;
@@ -47,12 +47,12 @@ body {
   animation: rotate 20s linear 0s infinite;
   width: 180%;
   height: 180%;
-  border: 3px dotted rgba(226, 230, 10, 0);
+  border: 3px dotted rgba(61, 10, 230, 0);
   z-index: -1;
 }
 .rotation:after {
   animation: rotate 10s linear 0s infinite reverse;
-  border: 80px dashed rgba(226, 230, 10, 0);
+  border: 80px dashed rgba(61, 10, 230, 0);
   width: 160%;
   height: 160%;
   z-index: -2;
@@ -61,25 +61,25 @@ body {
   animation: rotate 5s ease-in-out 0s infinite alternate;
   width: 120%;
   height: 120%;
-  border: 50px dashed rgba(226, 230, 10, 0);
+  border: 50px dashed rgba(61, 10, 230, 0);
 }
 .rotation a:after {
   animation: rotate 5s linear 0s infinite;
-  border: 18px dashed rgba(226, 230, 10, 0);
+  border: 18px dashed rgba(61, 10, 230, 0);
   width: 120%;
   height: 120%;
 }
 .rotation:hover:before {
-  border-color: rgba(226, 230, 10, 0.3);
+  border-color: rgba(61, 10, 230, 0.3);
 }
 .rotation:hover:after {
-  border-color: rgba(226, 230, 10, 0.1);
+  border-color: rgba(61, 10, 230, 0.1);
 }
 .rotation:hover a:before {
-  border-color: rgba(226, 230, 10, 0.3);
+  border-color: rgba(61, 10, 230, 0.3);
 }
 .rotation:hover a:after {
-  border-color: rgba(226, 230, 10, 0.3);
+  border-color: rgba(61, 10, 230, 0.3);
 }
 
 @keyframes rotate {
@@ -97,5 +97,5 @@ p.caption {
   width: 100%;
   top: 50px;
   letter-spacing: 0.2em;
-  text-shadow: 0 0 20px #FFFF7C, 0 0 20px rgba(226, 230, 10, 0);
+  text-shadow: 0 0 20px #9f7cff, 0 0 20px rgba(61, 10, 230, 0);
 }
