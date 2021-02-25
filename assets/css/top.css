@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: "Squada One",sans-serif;
   background: #1e183f;
@@ -12,6 +17,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 0;
 }
 .rotation a {
   display: table-cell;
@@ -57,6 +63,9 @@ body {
   height: 160%;
   z-index: -2;
 }
+.rotation a {
+  cursor: pointer;
+}
 .rotation a:before {
   animation: rotate 5s ease-in-out 0s infinite alternate;
   width: 120%;
@@ -81,7 +90,6 @@ body {
 .rotation:hover a:after {
   border-color: rgba(61, 10, 230, 0.3);
 }
-
 @keyframes rotate {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -90,12 +98,136 @@ body {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+
 p.caption {
-  font-size: 30px;
+  margin: 100px auto;
+  font-size: 40px;
   text-align: center;
-  position: fixed;
   width: 100%;
-  top: 50px;
   letter-spacing: 0.2em;
+  animation: slideIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  color: gray;
+  white-space: normal;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-180px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+  }
+  40%,100% {
+    opacity: 1;
+  }
+}
+p.caption span {
+  padding: 10px;
+  display: inline-block;
+}
+p.caption span.light {
+  color: #d4c7ff;
   text-shadow: 0 0 20px #9f7cff, 0 0 20px rgba(61, 10, 230, 0);
+}
+
+.do-x {
+  animation: do-x 2s cubic-bezier(.4, 0, .2, 1);
+  background-color: black;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+@keyframes do-x {
+  0% {
+    clip-path: circle(0 at 50% 50%);
+    -webkit-clip-path: circle(0 at 50% 50%);
+  }
+  
+  100% {
+    clip-path: circle(120% at 50% 50%);
+    -webkit-clip-path: circle(100% at 50% 50%);
+  }
+}
+
+.container {
+  width: 400px;
+  margin: calc(calc(100vh - 572px) / 2) auto;
+}
+.container a {
+  animation: slideIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  min-width: 300px;
+  display: block;
+  display: flex;
+  margin: 50px;
+  padding: 15px 20px;
+  border: 2px solid rgb(119, 0, 255);
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #fff;
+  -webkit-box-reflect: below 0px linear-gradient(transparent, #0002);
+  transition: 0.5s;
+}
+.container a:hover {
+  background: rgb(119, 0, 255);
+  color: #000;
+  box-shadow: 0 0 10px rgb(119, 0, 255),
+  0 0 20px rgb(119, 0, 255),
+  0 0 40px rgb(119, 0, 255),
+  0 0 80px rgb(119, 0, 255),
+  0 0 1000px rgb(119, 0, 255);
+}
+.container a span.icon {
+  position: relative;
+  display: block;
+  height: 30px;
+}
+.container a span.icon i.fas, .container a span.icon i.fab {
+  font-size: 30px;
+  line-height: 30px;
+}
+.container a span.title {
+  position: relative;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 100vw;
+  }
+  .container a {
+    min-width: 190px;
+  }
+}
+@media (max-width: 768px) {
+  p.caption {
+    font-size: 30px;
+  }
+}
+@media (max-height: 666px) and (min-height: 568px) {
+  p.caption {
+    margin: 50px auto 0 auto;
+  }
+  .container {
+    margin: calc(calc(100vh - 472px) / 2) auto;
+  }
+}
+@media (max-width: 328px) {
+  p.caption {
+    margin: 50px auto 20px auto;
+  }
+  .container {
+    margin: auto auto;
+  }
+}
+@media (max-height: 568px) {
+  p.caption {
+    margin: 20px auto 5px auto;
+  }
+  .container {
+    margin: auto auto;
+  }
 }

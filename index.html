@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0,user-scalable=yes"
     />
     <link
-      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/top.css" />
@@ -15,8 +15,80 @@
   </head>
   <body>
     <div class="rotation">
-      <a href="/home/"><i class="fab fa-superpowers"></i></a>
+      <!-- <a href="/home/"><i class="fab fa-superpowers"></i></a> -->
+      <a onclick="doX()"><i class="fab fa-superpowers"></i></a>
     </div>
-    <p class="caption">Hello konekato World!</p>
+
+    <div id="x">
+      <p id="caption"></p>
+      <div class="container"></div>
+    </div>
+
+    <script type="text/javascript">
+      function doX() {
+        // containerHtml .container 内の要素の配列
+        const containerHtml = 
+        `<a href="/home/">
+          <span class="icon"><i class="fas fa-house-user fa-fw"></i></span>
+          <span class="title">Portfolio</span>
+        </a>
+        <a href="/apps/">
+          <span class="icon"><i class="fab fa-medapps fa-fw"></i></span>
+          <span class="title">Apps</span>
+        </a>
+        <a href="/home/#contact">
+          <span class="icon"><i class="fas fa-mail-bulk fa-fw"></i></span>
+          <span class="title">Contact</span>
+        </a>`;
+
+        // Animation x 開始
+        document.getElementById('x').classList.add('do-x');
+        window.setTimeout(function() {
+          // サークル要素は削除
+          document.querySelector('.rotation').remove();
+        }, 500);
+
+        window.setTimeout(function() {
+          // 文字'Hello konekato World!'表示
+          const caption = document.getElementById('caption');
+          const s = 'Hello konekato World!'.split(' ');
+          let s2 = '';
+          for (let i = 0; i < s.length; i++) {
+            s2 += '<span>' + s[i] + '</span>';
+          }
+          caption.innerHTML = s2;
+          caption.classList.add('caption');
+
+          const children = caption.childNodes;
+          window.setTimeout(function() {
+            let timeout = 0;
+            for (let i = 0; i < children.length; i++) {
+              // ライトアップ
+              timeout += 200;
+              window.setTimeout(function() {
+                children[i].classList.add('light');
+              }, timeout);
+            }
+
+            // .container 内の要素表示
+            timeout += 300;
+            window.setTimeout(function() {
+              document.querySelector('.container').innerHTML = containerHtml;
+            }, timeout);
+          }, 1500);
+        }, 1000);
+      }
+      function isNotPC() {
+        if (navigator.userAgent.match(/iPhone|Android|Mobile/)) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      // TODO スマホの場合はサークル常に表示
+      // if (isNotPC()) {
+      //   document.querySelector('.rotation').classList.add('active');
+      // }
+    </script>
   </body>
 </html>
